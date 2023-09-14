@@ -1,0 +1,87 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+
+import fleekLogo from "../resources/fleekLogo.svg";
+import fleekIcon from "../resources/fleekIcon.svg";
+import astroLogo from "../resources/astroLogo.svg";
+import astroIcon from "../resources/astroIcon.svg";
+import addIcon from "../resources/addIcon.svg";
+---
+
+<Layout title="Welcome to Astro.">
+  <main>
+    <div class="title-container">
+      <img class="logo" src={fleekLogo} />
+      <img src={addIcon} />
+      <img class="logo" src={astroLogo} />
+    </div>
+    <p class="description">
+      This is a template for creating an Astro site and deploying it on Fleek.
+    </p>
+    <ul role="list" class="link-card-grid">
+      <Card
+        icon={fleekIcon}
+        href="https://docs.fleek.xyz/"
+        title="Fleek Documentation"
+        body="Learn about Fleek & the available services by cheking our official docs."
+      />
+      <Card
+        icon={astroIcon}
+        href="https://docs.astro.build/en/concepts/why-astro/"
+        title="Astro Documentation"
+        body="Learn about how Astro works and explore the official API docs."
+      />
+      <Card
+        icon={fleekIcon}
+        href="https://blog.fleek.xyz/"
+        title="Fleek Blog Post"
+        body="Checkout our Blog post about this Astro template."
+      />
+      <Card
+        icon={astroIcon}
+        href="https://astro.build/integrations/"
+        title="Astro Integrations"
+        body="Supercharge your project with new frameworks and libraries."
+      />
+    </ul>
+  </main>
+</Layout>
+
+<style>
+  .logo {
+    width: 200px;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 850px;
+    margin: 0 auto;
+    height: 100vh;
+  }
+
+  .title-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .description {
+    font-size: 30px;
+    line-height: 41px;
+    text-align: center;
+    color: #e5e7eb;
+    width: 752px;
+  }
+
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+  }
+</style>

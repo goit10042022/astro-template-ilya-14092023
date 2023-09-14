@@ -1,0 +1,87 @@
+---
+export interface Props {
+  title: string;
+  body: string;
+  href: string;
+  icon: string;
+}
+
+const { href, title, body, icon } = Astro.props;
+---
+
+<li class="link-card">
+  <a href={href}>
+    <div class="card-title-container">
+      <img class="card-icon" src={icon} class="icon" />
+      <h2>
+        {title}
+      </h2>
+    </div>
+    <p>
+      {body}
+    </p>
+  </a>
+</li>
+<style>
+  .card-icon {
+    height: 31px;
+  }
+  .card-title-container {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .link-card {
+    list-style: none;
+  }
+
+  .link-card > a {
+    border-radius: 20px;
+    border: 0.85px solid #313538;
+
+    background: linear-gradient(
+      131.92deg,
+      rgba(21, 23, 24, 1) 0%,
+      rgba(38, 41, 43, 1) 105.38%
+    );
+    max-width: 100%;
+
+    text-decoration: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 32px;
+    gap: 15px;
+  }
+
+  .link-card:hover > a {
+    background: linear-gradient(
+      131.92deg,
+      rgba(21, 23, 24, 0.7) 0%,
+      rgba(38, 41, 43, 0.7) 105.38%
+    );
+  }
+
+  h2 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 33px;
+    letter-spacing: 0em;
+    margin: 0;
+    color: #fff;
+  }
+
+  p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+
+    margin: 0;
+
+    color: #9ca3af;
+  }
+</style>
